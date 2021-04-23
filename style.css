@@ -21,7 +21,7 @@ body {
     gap: 10px;
 }
 
-.btn {
+.option {
     background-color: coral;
     border: 1px solid black;
     border-radius: 5px;
@@ -29,7 +29,7 @@ body {
     
 }
 
-.btn:hover {
+.option:hover {
     background-color: darkcyan;
 }
 
