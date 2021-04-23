@@ -1,0 +1,38 @@
+body {
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-size: large;
+    color: navy;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100vw;
+    height: 100vh;
+
+}
+
+.container{
+    border-radius: 7px;
+    padding: 12px;
+}
+
+.btn-grid {
+    display: grid;
+    margin: 20px;
+    gap: 10px;
+}
+
+.btn {
+    background-color: coral;
+    border: 1px solid black;
+    border-radius: 5px;
+    padding: 5px;
+    
+}
+
+.btn:hover {
+    background-color: darkcyan;
+}
+
+.hide {
+    display: none;
+}
