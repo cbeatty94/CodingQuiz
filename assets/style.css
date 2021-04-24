@@ -33,3 +33,6 @@ body {
     background-color: darkcyan;
 }
 
+script {
+    display: none;
+}

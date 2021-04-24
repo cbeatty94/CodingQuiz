@@ -4,11 +4,12 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" type="text/css" href="./style.css"/>
+    <link rel="stylesheet" type="text/css" href="./assets/style.css"/>
     <title>Coding Quiz</title>
 </head>
 <header>
     <nav>
+        <a href="./assets/score.html">High Scores</a>
         <span id='timer'>Time:0</span>
     </nav>
     <h2 id = "quiz" data-state="visible">Try to answer the following questions within the time limit. Keep in mind the incorrect answers will penalize your score-time by 10 seconds!</h2>
@@ -25,13 +26,13 @@
     </div>
 
     <p id="score" hidden>Congratulations! Your final score is  <span id="score"></span></p>
-        <form id="scoreForm" hidden method="POST" action="/score.html">
+        <form id="scoreForm" hidden method="POST" action="./assets/score.html">
             <div class="input-initials">
                 <label for="initials">Enter Initials</label>
                 <input type="text" name="initials" id="initials" placeholder=" " />
             </div>
             <button id="submit">Submit Score</button>
         </form>
-    <script src="script.js"></script>
-</body>
+        <script src="./assets/script.js"></script>
+    </body>
 </html>
