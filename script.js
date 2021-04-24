@@ -8,6 +8,7 @@ var option3 = document.querySelector("#option3")
 var option4 = document.querySelector("#option4")
 var quiz = document.querySelector("#quiz")
 var submitButton = document.querySelector("#submit")
+var localScores = []
 
 var questions = [
     {
@@ -54,6 +55,7 @@ startBtn.addEventListener('click',function() {
     document.querySelector("#start-btn").hidden=true;
     document.querySelector("#quiz").hidden=true;
     document.getElementsByTagName("div")[0].style.display= "block";
+    document.getElementById('score').style.display= 'none'
     setTime();
     nextQuestion();
 })
@@ -75,10 +77,15 @@ function setTime() {
 
 var lastQuestionIndex = questions.length - 1
 var runningQuestionIndex = 0
+var finalScore = document.getElementById('score')
+var scoreForm = document.getElementById('scoreForm')
+var container = document.querySelector('.container')
 
 function nextQuestion() {
     if(runningQuestionIndex > lastQuestionIndex) {
-        quiz.style.display = "none"
+        timer.style.display = 'none'
+        container.style.display = 'none'
+        scoreForm.style.display = "block"
         finalScore.style.display = "block"
         finalScore.innerHTML = "Your final score" + " " + secondsLeft
         clearInterval(timerInterval);
@@ -103,39 +110,27 @@ function checkAnswer(answer){
     }
 }
 
+function localStorageScores(){
+    var initials = document.getElementById('initials').value;
+    var checkLocal = JSON.parse(localStorage.getItem('scores'));
 
-var initialsEl = document.getElementById('initials')
-var scoreEl = document.getElementById('scoreForm')
-var highScores = document.getElementById('highscores')
-var scoreList = document.getElementById('scoreList')
-
-
-// highscore form with initials submit
-submitButton.addEventListener('click', function(event) {
-    event.preventDefault();
-    saveScores();
-    renderScores();
-})
-
-// save form as object
-var user = {
-    initials: initialsEl.nodeValue.trim(),
-    score: secondsLeft
-};
-
-// store object in storage and convert to a string
-
-
-var lastScore = json.parse(localStorage.getItem('user'));
-console.log(lastScore);
-localStorage.setItem('user', JSON.stringify(lastScore));
-// (add user into last score with array)
-lastScore.push(user)
-console.log(lastScore);
-
-function renderScores() {
-    for (let i = 0; i < list.length; i++) {
-        
-        
+    if (secondsLeft < 0) {
+        secondsLeft = 0;
     }
-}
+    if (checkLocal === null) {
+        localScores = [{
+            playerInitials: initials.trim(),
+            userScore: secondsLeft}]
+    
+        } else {
+            localScores = checkLocal.concat([{
+                playerInitials: initials.trim(),
+                userScore: secondsLeft}])
+        }
+        localStorage.setItem('scores', JSON.stringify(localScores))
+}    
+
+
+
+
+

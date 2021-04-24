@@ -15,7 +15,7 @@
     <button id="start-btn" class="start-btn btn">Start</button>
 </header>
 <body>
-    <div id="questions" style="display: none;">
+    <div class="container" id="questions" style="display: none;">
         <div id="question"></div>
         <button class="options" id="option1" onclick="checkAnswer('option1')">Answer 1</button>
         <button class="options" id="option2" onclick="checkAnswer('option2')">Answer 2</button>
@@ -23,17 +23,15 @@
         <button class="options" id="option4" onclick="checkAnswer('option4')">Answer 4</button>
         </div>
     </div>
-    <div id="final">
-        <h2>Quiz Complete!</h2>
-        <form id="scoreForm" method="POST">
-            <h3 id="score">Congratulations! Your final score is ____.</h3>
-            <div>
+
+    <p id="score" hidden>Congratulations! Your final score is  <span id="score"></span></p>
+        <form id="scoreForm" hidden method="POST" action="/score.html">
+            <div class="input-initials">
                 <label for="initials">Enter Initials</label>
                 <input type="text" name="initials" id="initials" placeholder=" " />
             </div>
             <button id="submit">Submit Score</button>
         </form>
-    </div>
     <script src="script.js"></script>
 </body>
 </html>
