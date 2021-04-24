@@ -23,6 +23,17 @@
         <button class="options" id="option4" onclick="checkAnswer('option4')">Answer 4</button>
         </div>
     </div>
+    <div id="final">
+        <h2>Quiz Complete!</h2>
+        <form id="scoreForm" method="POST">
+            <h3 id="score">Congratulations! Your final score is ____.</h3>
+            <div>
+                <label for="initials">Enter Initials</label>
+                <input type="text" name="initials" id="initials" placeholder=" " />
+            </div>
+            <button id="submit">Submit Score</button>
+        </form>
+    </div>
     <script src="script.js"></script>
 </body>
 </html>

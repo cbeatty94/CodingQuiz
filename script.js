@@ -103,3 +103,39 @@ function checkAnswer(answer){
     }
 }
 
+
+var initialsEl = document.getElementById('initials')
+var scoreEl = document.getElementById('scoreForm')
+var highScores = document.getElementById('highscores')
+var scoreList = document.getElementById('scoreList')
+
+
+// highscore form with initials submit
+submitButton.addEventListener('click', function(event) {
+    event.preventDefault();
+    saveScores();
+    renderScores();
+})
+
+// save form as object
+var user = {
+    initials: initialsEl.nodeValue.trim(),
+    score: secondsLeft
+};
+
+// store object in storage and convert to a string
+
+
+var lastScore = json.parse(localStorage.getItem('user'));
+console.log(lastScore);
+localStorage.setItem('user', JSON.stringify(lastScore));
+// (add user into last score with array)
+lastScore.push(user)
+console.log(lastScore);
+
+function renderScores() {
+    for (let i = 0; i < list.length; i++) {
+        
+        
+    }
+}
