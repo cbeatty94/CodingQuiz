@@ -1,5 +1,5 @@
 var endScores = JSON.parse(localStorage.getItem('scores'));
-var resetHStn = document.getElementById('clear');
+var resetBtn = document.getElementById('clear');
 var tryAgainBtn = document.getElementById('tryAgain');
 
 if (endScores === null){
@@ -22,7 +22,12 @@ function Ranking(){
    return 0;
 }
 
-   tryAgainBtn.addEventListener('click', function(event){
-      console.log(event)
-      window.location.replace('../index.html')
-   });
+tryAgainBtn.addEventListener('click', function(event){
+   console.log(event)
+   window.location.replace('../index.html')
+});
+
+resetBtn.addEventListener('click', function(){
+   localStorage.clear();
+   document.getElementById('highScore').innerHTML = ""
+});
