@@ -7,8 +7,8 @@ var option2 = document.querySelector("#option2")
 var option3 = document.querySelector("#option3")
 var option4 = document.querySelector("#option4")
 var quiz = document.querySelector("#quiz")
-var submitButton = document.querySelector("#submit")
 var localScores = []
+var container = document.querySelector('#container')
 
 var questions = [
     {
@@ -51,7 +51,6 @@ var questions = [
 
 
 startBtn.addEventListener('click',function() {
-    console.log(startBtn);
     document.querySelector("#start-btn").hidden=true;
     document.querySelector("#quiz").hidden=true;
     document.getElementsByTagName("div")[0].style.display= "block";
@@ -87,7 +86,7 @@ function nextQuestion() {
         container.style.display = 'none'
         scoreForm.style.display = "block"
         finalScore.style.display = "block"
-        finalScore.innerHTML = "Your final score" + " " + secondsLeft
+        finalScore.innerHTML = "Your final score is" + " " + secondsLeft
         clearInterval(timerInterval);
     } else {
         var q = questions[runningQuestionIndex]
@@ -109,6 +108,12 @@ function checkAnswer(answer){
         nextQuestion()
     }
 }
+
+var submitButton = document.querySelector("#submit")
+submitButton.addEventListener('click', function(event) {
+    event.preventDefault();
+    localStorageScores();
+})
 
 function localStorageScores(){
     var initials = document.getElementById('initials').value;

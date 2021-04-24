@@ -11,3 +11,13 @@ if (endScores === null){
        document.querySelector('#highScore').appendChild(a);
        a.className += 'userList';
     }}
+
+function Ranking(){
+   if (a.userScore < b.userScore){
+      return 1;
+   }
+   if (a.userScore > b.userScore){
+      return -1;
+   }
+   return 0;
+}
