@@ -22,9 +22,7 @@ function Ranking(){
    return 0;
 }
 
-if (tryAgainBtn === null){
-}else{
    tryAgainBtn.addEventListener('click', function(event){
       console.log(event)
       window.location.replace('../index.html')
-   })};
+   });
