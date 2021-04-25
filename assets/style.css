@@ -1,12 +1,12 @@
+
 body {
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
     font-size: large;
     color: navy;
-    display: flex;
+    background-color: antiquewhite;
     justify-content: center;
     align-items: center;
-    width: 100vw;
-    height: 100vh;
+    text-align: center;
 
 }
 
@@ -33,6 +33,19 @@ body {
     background-color: darkcyan;
 }
 
-script {
-    display: none;
+.highScoreLink {
+    /* float:left; */
+    position: absolute;
+    top: 10px;
+    right: 20px;
+
+}
+
+#highScore {
+    list-style: none;
+}
+
+nav {
+    display: flex;
+    justify-content: space-around;
 }
